@@ -2,9 +2,9 @@ from personajes import Personaje
 
 class Guerrero(Personaje):
 
-    def __init__(self, nombre, nivel, vida, energia, ataque, armadura, escudo_mag, costo_mov,
-                  habilidad_guerrero, bono_armadura):
-        super().__init__(nombre, nivel, vida, energia, ataque, armadura, escudo_mag, costo_mov)
+    def __init__(self, vida, energia, ataque, armadura, escudo_mag, costo_mov,
+                  habilidad_guerrero, bono_armadura, nombre, nivel, clase="Humano"):
+        super().__init__(vida, energia, ataque, armadura, escudo_mag, costo_mov, nombre, nivel, clase)
         
         self.habilidad_guerrero = habilidad_guerrero
         self.bono_armadura = bono_armadura
@@ -18,7 +18,7 @@ class Guerrero(Personaje):
         return h_defensa
 
 vidaRada = 5
-ador = Guerrero("Ador", 1, 10,10,12,3,0,1,2,1)
+ador = Guerrero(10,10,12,3,0,1,2,1,"Ador", 1, "Guerrero")
 print(f"ADOR tiene de vida :{ador.vida}")
 print(f"ADOR tiene de energia :{ador.energia}")
 print(f"ADOR tiene de ataque :{ador.ataque}")

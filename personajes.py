@@ -6,9 +6,10 @@ class Personaje:
     armadura = 0
     escudoM = 0
 
-    def __init__(self,nombre, nivel, vida, energia, ataque, armadura, escudo_mag, costo_mov):
+    def __init__(self, vida, energia, ataque, armadura, escudo_mag, costo_mov,nombre, nivel,clase = "Humano"):
         self.nombre = nombre
         self.nivel = nivel
+        self.clase = clase
         self.vida = vida
         self.energia = energia
         self.ataque = ataque
