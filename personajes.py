@@ -6,7 +6,8 @@ class Personaje:
     armadura = 0
     escudoM = 0
 
-    def __init__(self, vida, energia, ataque, armadura, escudo_mag, costo_mov,nombre, nivel,clase = "Humano"):
+    def __init__(self, vida : float, energia : float, ataque : float, armadura : float,
+                  escudo_mag : float, costo_mov : float,nombre : str, nivel : int ,clase = "Humano"):
         self.nombre = nombre
         self.nivel = nivel
         self.clase = clase
@@ -18,40 +19,93 @@ class Personaje:
         self.costo_mov = costo_mov
 
 
-    def curar_Vida(self, cura_mas):
+    def curar_Vida(self, cura_mas : float):
         self.vida += cura_mas
         return self.vida
 
-    def crear_EscudoM(self, escudo_mas):
+    def crear_EscudoM(self, escudo_mas : float):
         self.escudoM += escudo_mas
         return self.escudoM
     
-    def restaurar_Energia(self, energia_mas):
+    def restaurar_Energia(self, energia_mas : float):
         self.energia += energia_mas
 
-    def aplicar_Defensa(self, daño_puro, bonificacion):
+    def aplicar_Defensa(self, daño_puro : float, bonificacion : float):
         daño_mitigado = daño_puro - (self.armadura + self.escudoM + bonificacion)
         return daño_mitigado
 
-    def recibir_Ataque(self, daño_recibido):
+    def recibir_Ataque(self, daño_recibido : float):
         self.vida -= daño_recibido
 
-    def causar_Daño(self, mod_daño):
+    def causar_Daño(self, mod_daño : float):
         self.ataque += mod_daño
         return self.ataque
 
-    def movimiento(self, penalizacion):
+    def movimiento(self, penalizacion : float):
         self.energia -= self.costo_mov + penalizacion
 
+    def set_Nombre(self, set_nombre):
+        self.nombre = set_nombre
 
-persona = Personaje("Pedro", 1,10,10,10,10,10, 1)
-print(f"La persona tiene de vida :{persona.nombre}")
-print(f"La persona tiene de vida :{persona.nivel}")
-print(f"La persona tiene de vida :{persona.vida}")
-print(f"La persona tiene de energia :{persona.energia}")
-print(f"La persona tiene de ataque :{persona.ataque}")
-print(f"La persona tiene de armadura :{persona.armadura}")
-print(f"La persona tiene de escudo magico :{persona.escudoM}")
+    def get_Nombre(self):
+        return self.nombre
+    
+    def set_Nivel(self, set_nivel):
+        self.nivel = set_nivel
+
+    def get_Nivel(self):
+        return self.nivel
+    
+    def set_Clase(self, set_clase):
+        self.clase = set_clase
+
+    def get_Clase(self):
+        return self.clase
+
+    def set_Vida(self,set_vida):
+        self.vida = set_vida
+
+    def get_Vida(self):
+        return self.vida
+
+    def set_Energia(self, set_energia):
+        self.energia = set_energia
+
+    def get_Energia(self):
+        return self.energia
+
+    def set_Ataque(self, set_ataque):
+        self.ataque = set_ataque
+    
+    def get_Ataque(self):
+        return self.ataque
+
+    def set_Armadura(self, set_armadura):
+        self.armadura = set_armadura
+
+    def get_Armadura(self):
+        return self.armadura
+
+    def set_EscudoMag(self, set_escudoMag):
+        self.escudo_mag = set_escudoMag
+
+    def get_EscudoMag(self):
+        return self.escudo_mag
+
+    def set_CostoMov(self, set_costo_mov):
+        self.costo_mov = set_costo_mov
+
+    def get_CostoMov(self):
+        return self.costo_mov
+
+persona = Personaje(10,10,10,10,10, 1,"Pedro", 1,)
+print(f"La {persona.get_Nombre()} tiene de vida :{persona.get_Vida()}")
+print(f"La {persona.get_Nombre()} esta en el nivel :{persona.get_Nivel()}")
+print(f"La {persona.get_Nombre()} es de clase :{persona.get_Clase()}")
+print(f"La {persona.get_Nombre()} tiene de energia :{persona.get_Energia()}")
+print(f"La {persona.get_Nombre()} tiene de ataque :{persona.get_Ataque()}")
+print(f"La {persona.get_Nombre()} tiene de armadura :{persona.get_Armadura()}")
+print(f"La {persona.get_Nombre()} tiene de escudo magico :{persona.get_EscudoMag()}")
 persona.recibir_Ataque(5)
 persona.movimiento(2)
 print(f"{persona.nombre} se tropezo y ahora tiene {persona.vida} de vida "

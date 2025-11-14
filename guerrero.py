@@ -19,13 +19,14 @@ class Guerrero(Personaje):
 
 vidaRada = 5
 ador = Guerrero(10,10,12,3,0,1,2,1,"Ador", 1, "Guerrero")
-print(f"ADOR tiene de vida :{ador.vida}")
-print(f"ADOR tiene de energia :{ador.energia}")
-print(f"ADOR tiene de ataque :{ador.ataque}")
-print(f"ADOR tiene de armadura :{ador.armadura}")
-print(f"ADOR tiene de escudo magico :{ador.escudoM}")
-print(f"ADOR tiene de puntos de habilidad : {ador.habilidad_guerrero} ")
-print(f"ADOR tiene una bonificacion de {ador.bono_armadura}")
+print(f"{ador.get_Nombre()} tiene de vida :{ador.get_Vida()}")
+print(f"{ador.get_Nombre()} es nivel :{ador.get_Nivel()}")
+print(f"{ador.get_Nombre()} tiene de energia :{ador.get_Energia()}")
+print(f"{ador.get_Nombre()} tiene de ataque :{ador.get_Ataque()}")
+print(f"{ador.get_Nombre()} tiene de armadura :{ador.get_Armadura()}")
+print(f"{ador.get_Nombre()} tiene de escudo magico :{ador.get_EscudoMag()}")
+print(f"{ador.get_Nombre()} tiene de puntos de habilidad : {ador.habilidad_guerrero} ")
+print(f"{ador.get_Nombre()} tiene una bonificacion de {ador.bono_armadura}")
 
 print(f"El guerrero Ador es atacado por una rata a la que le piso la cola!!")
 ador.recibir_Ataque(ador.aplicar_Defensa(5, ador.bono_armadura))
