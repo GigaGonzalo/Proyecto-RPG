@@ -2,9 +2,9 @@ from personajes import Personaje
 
 class Arquero(Personaje):
 
-    def __init__(self, vida, energia, ataque, armadura, escudo_mag, costo_mov, cantidad_flechas):
-        super().__init__(vida, energia, ataque, armadura, escudo_mag, costo_mov)
-
+    def __init__(self, vida, energia, ataque, armadura, escudo_mag, costo_mov,cantidad_flechas,
+                  nombre, nivel, clase="Humano"):
+        super().__init__(vida, energia, ataque, armadura, escudo_mag, costo_mov, nombre, nivel, clase)
         self.costo_mov = 0.5
         self.cantidad_flechas = cantidad_flechas
     
